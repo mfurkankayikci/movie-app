@@ -3,11 +3,18 @@ import axios from "axios";
 
 export const fetchMovies = createAsyncThunk(
   "movies/fetchMovies",
-  async (searchTerm = "Pokemon") => {
+  async ({
+    searchTerm = "Pokemon",
+    page = 1,
+    year = "",
+    type = "",
+    id = "",
+  }) => {
     const response = await axios.get(
-      `http://www.omdbapi.com/?s=${searchTerm}&apikey=YOUR_API_KEY`
+      `http://www.omdbapi.com/?i=${id}&s=${searchTerm}&y=${year}&type=${type}&page=${page}&apikey=3e72ac2`
     );
-    return response.data.Search; // Film listesini döner
+
+    return response.data.Search || new Array(response.data);
   }
 );
 
@@ -15,24 +22,31 @@ const movieSlice = createSlice({
   name: "movies",
   initialState: {
     movies: [],
-    status: "idle",
+    isLoading: false,
     error: null,
+    currentPage: 1,
   },
-  reducers: {},
+  reducers: {
+    setPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMovies.pending, (state) => {
-        state.status = "loading";
+        state.isLoading = true;
       })
       .addCase(fetchMovies.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.isLoading = false;
         state.movies = action.payload;
       })
       .addCase(fetchMovies.rejected, (state, action) => {
-        state.status = "failed";
+        state.isLoading = false;
         state.error = action.error.message;
       });
   },
 });
+
+export const { setPage } = movieSlice.actions;
 
 export default movieSlice.reducer;
