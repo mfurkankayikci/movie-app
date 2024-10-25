@@ -1,8 +1,19 @@
-# React + Vite
+## Technologies Used
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [React.js](https://reactjs.org/): Used for building the user interface.
+- [Redux](https://redux.js.org/): Utilized for state management in the application. Redux's predictable state container helps in managing application state effectively.
+- [Bootsrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/): A utility-first CSS framework for styling the application, allowing for rapid UI development.
+- [Axios](https://axios-http.com/): Used for making HTTP requests to fetch product data from the API.
+- [Vitest](https://vitest.dev/): Employed for unit testing the components and ensuring code reliability.
 
-Currently, two official plugins are available:
+## How to Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Navigate to the project folder and follow the steps below:
+
+1. Run `npm install` to install project dependencies.
+2. Run `npm run dev` to start the development server.
+
+## Developer
+
+Furkan Kayıkcı  
+mfurkankayikci@gmail.com
