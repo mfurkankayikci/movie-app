@@ -4,7 +4,6 @@
 - [Redux](https://redux.js.org/): Utilized for state management in the application. Redux's predictable state container helps in managing application state effectively.
 - [Bootsrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/): A utility-first CSS framework for styling the application, allowing for rapid UI development.
 - [Axios](https://axios-http.com/): Used for making HTTP requests to fetch product data from the API.
-- [Vitest](https://vitest.dev/): Employed for unit testing the components and ensuring code reliability.
 
 ## How to Run
 
